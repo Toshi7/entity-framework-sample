@@ -9,8 +9,10 @@ namespace TestingDb
 {
     public class Testing_KeihiDetail
     {
-        [Key]
-        public int KeihiDetailId { get; set; }
+        //[Key]
+        //"class name + Id" or "Id"
+        //e.g. Testing_KeihiDetailId or Id
+        public int Id { get; set; }
 
         public DateTime Dt { get; set; }
 

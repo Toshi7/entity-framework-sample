@@ -14,7 +14,7 @@ namespace TestingDb
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql(@"User Id=test1;Password=test1;Host=localhost;Port=5432;Database=practice1");
+            optionsBuilder.UseNpgsql(@"User Id=postgres;Password=;Host=localhost;Port=5432;Database=practice1");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -22,12 +22,12 @@ namespace TestingDb
             {
                 //主キーを設定し、主キー制約名を.HasNameで設定している。
                 //.HasKey複合主キー
-                entity.HasKey(e => e.KeihiDetailId)
-                     .HasName("KeihiDetail_Id");
+               // entity.HasKey(e => e.KeihiDetailid)
+               //      .HasName("KeihiDetail_Id");
 
                 entity.ToTable("Testing_KeihiDetail");
 
-                entity.Property(e => e.KeihiDetailId).HasColumnName("ID");
+//                entity.Property(e => e.Testing_KeihiDetailId).HasColumnName("andro");
 
                 entity.Property(e => e.Subject)
                     .IsRequired(true)  
